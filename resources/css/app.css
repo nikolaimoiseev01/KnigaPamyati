@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @apply text-white bg-gray-600;
+}
+h1 {
+    font-family: '"Bebas Neue Pro"', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    @apply text-[80px] font-bold tracking-[-0.02em];
+}
+
+.content {
+    @apply px-10;
+}
