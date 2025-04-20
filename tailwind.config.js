@@ -15,12 +15,30 @@ export default {
                 sans: ['Inter Tight', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                gray: {
+                bright: {
+                  85: '#FFFFFFD9',
+                  100: '#FFFFFF'
+                },
+                dark: {
+                    200: '#DCDCDC',
+                    300: '#898989',
+                    400: '#343434',
+                    500: '#202020',
                     600: '#141414'
                 },
                 coral: {
                     500: '#CE624F'
                 }
+            },
+            maxWidth: {
+                '8xl': '84.75rem', // 1536px (примерное значение, можно изменить)
+            },
+            screens: {
+                '2xl': {'max': '1535px'}, // => @media (max-width: 1535px) { ... }
+                'xl': {'max': '1279px'}, // => @media (max-width: 1279px) { ... }
+                'lg': {'max': '1023px'}, // => @media (max-width: 1023px) { ... }
+                'md': {'max': '767px'}, // => @media (max-width: 767px) { ... }
+                'sm': {'max': '639px'}, // => @media (max-width: 639px) { ... }
             }
         },
     },

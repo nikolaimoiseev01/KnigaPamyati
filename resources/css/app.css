@@ -8,17 +8,39 @@
 }
 
 body {
-    @apply text-white bg-gray-600;
+    @apply text-bright-100 bg-dark-600;
 }
 h1 {
-    font-family: '"Bebas Neue Pro"', sans-serif;
+    font-family: 'Bebas Neue Pro', sans-serif;
     font-weight: 700;
+    line-height: 90%;
+}
+
+.text-secondary {
+    font-family: "Space Mono", sans-serif;
+    font-weight: 400;
+    @apply text-dark-300;
 }
 
 h2 {
-    @apply text-[80px] font-bold tracking-[-0.02em];
+    @apply font-medium tracking-[-0.02em] leading-[90%] mb-4;
+}
+
+h3 {
+    @apply font-medium leading-[95%] mb-4 text-[3vw];
 }
 
 .content {
+    @apply max-w-[1560px] mx-auto w-[90%];
+}
+
+.sticky-content-wide {
     @apply px-10;
+}
+.sticky-content-secondary {
+    @apply px-40;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    @apply border border-dark-500 focus:border-dark-600 outline-none !ring-0;
 }

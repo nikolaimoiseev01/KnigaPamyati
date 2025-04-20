@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,5 +25,6 @@ class AppServiceProvider extends ServiceProvider
         RedirectIfAuthenticated::redirectUsing(function () {
             return route('account.settings');
         });
+        Model::unguard();
     }
 }
