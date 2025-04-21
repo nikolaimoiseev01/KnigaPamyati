@@ -9,7 +9,7 @@
         </div>
         <div class="sticky-content-wide"><p class="text-[1vw]">{{$company['description']}}</p></div>
     </section>
-    <section class="flex flex-col gap-8 mb-16">
+    <section class="flex flex-col gap-8 mb-16 text-[1vw]">
         @foreach(json_decode($company['timeline']) as $event)
             <div class="sticky-content-wide grid grid-cols-12">
                 <div class="col-start-1 col-span-2 flex gap-4">
@@ -26,7 +26,7 @@
         @endforeach
     </section>
     <section class="mb-16">
-        <x-company-slider :images="$company->getMedia('gallery')"/>
+        <x-gallery :images="$company->getMedia('gallery')"/>
     </section>
     <section>
         <div class="sticky-content-wide grid grid-cols-12">

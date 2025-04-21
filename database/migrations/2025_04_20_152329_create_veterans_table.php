@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('thirdname');
+            $table->text('description');
             $table->string('position');
             $table->string('birth_dt');
             $table->string('death_dt');

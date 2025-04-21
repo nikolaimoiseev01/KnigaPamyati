@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('date_start');
             $table->string('date_end');
-            $table->string('description');
+            $table->text('description');
             $table->text('main_fact');
             $table->json('timeline');
             $table->timestamps();

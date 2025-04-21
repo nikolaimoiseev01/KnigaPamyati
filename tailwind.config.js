@@ -13,6 +13,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Inter Tight', ...defaultTheme.fontFamily.sans],
+                mono: ['Space Mono', ...defaultTheme.fontFamily.mono],
             },
             colors: {
                 bright: {
@@ -27,6 +28,7 @@ export default {
                     600: '#141414'
                 },
                 coral: {
+                    300: '#F5E0B8',
                     500: '#CE624F'
                 }
             },

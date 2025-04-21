@@ -69,14 +69,15 @@ class DatabaseSeeder extends Seeder
 
         foreach ($districts as $district) {
             $federal_district = FederalDistrict::create($district);
-            for ($ci = 1; $ci <= 3; $ci++) { // Создаем несколько компаний
+            for ($ci = 1; $ci <= 2; $ci++) { // Создаем несколько компаний
                 $company = Company::create([
                     'federal_district_id' => $federal_district->id,
                     'name' => "Компания {$ci} ({$federal_district['slug']})",
                     'date_start' => '1942',
                     'date_end' => 'Н.В.',
-                    'description' => 'Описание компании ' . $ci,
-                    'main_fact' => 'Основные факты компании ' . $ci,
+                    'description' => 'У Каменск-Уральского металлургического завода есть несколько первых исторических рубежей, связанных с ключевым словом «Победа». В далеком 1942-м, 14 февраля, в литейном цехе завода №268 (КУМЗа) была получена первая плавка, выпущена первая заводская продукция. В 1944-м, 5 мая, в невероятно сложных условиях была введена I очередь завода, этот день принято считать Днем рождения КУМЗа. 29-го победного для всей страны мая 1945 года Госкомиссия приняла решение о вводе всего
+комплекса завода в эксплуатацию. КУМЗ – ровесник Победы.',
+                    'main_fact' => 'Венцом усилий заводчан стало оформление 268-го в самостоятельную хозяйственную единицу в декабре 1943 года, подтвержденное приказом №5 по Наркомату авиационной промышленности от 4.01.1944 года. Первым директором завода №268 (КУМЗ) стал Федор Терентьевич Маленок. Он возглавлял завод в 1944-1945 гг.',
                     'timeline' => json_encode([
                         [
                             'period' => '3 июня 1939 года',
@@ -94,20 +95,18 @@ class DatabaseSeeder extends Seeder
                 $company->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_1_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
                 $company->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_2_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
                 $company->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_1_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
-                $company->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_2_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
-                $company->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_1_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
-                $company->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_2_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
 
-                for ($vi = 1; $vi <= 3; $vi++) { // Создаем несколько ветеранов
+                for ($vi = 1; $vi <= 10; $vi++) { // Создаем несколько ветеранов
                     $veteran = Veteran::create([
                         'company_id' => $company->id,
-                        'name' => 'Ветеран ' . $vi,
-                        'surname' => 'Фамилия ' . $vi,
-                        'thirdname' => 'Отчество ' . $vi,
+                        'name' => 'Илья',
+                        'surname' => 'Абрамов ',
+                        'thirdname' => 'Васильевич ',
+                        'description' => 'Илья Васильевич Абрамов — советский военнослужащий, сапёр 180-го отдельного сапёрного батальона 167-й стрелковой Сумско-Киевской дважды Краснознамённой дивизии 38-й армии 1-го Украинского фронта, ефрейтор. Участник Великой Отечественной войны. Герой Советского Союза (1944).',
                         'birth_dt' => '1941',
                         'death_dt' => '1972',
                         'position' => 'Инженер',
-                        'main_fact' => 'Основные факты ветерана ' . $vi,
+                        'main_fact' => '18 февраля 1942 год девятнадцатилетний Илья Васильевич был отправлен на фронт, где служил сапёром. Порой за день ему приходилось обезвреживать до сотни мин, каждый раз рискуя погибнуть. Но благодаря его работе были спасены десятки жизней советских воинов',
                         'timeline' => json_encode([
                             [
                                 'period' => 'сентябрь 1942',
@@ -121,6 +120,11 @@ class DatabaseSeeder extends Seeder
                     ]);
                     $image = url('/') . '/fixed/test/veteran_test.jpeg';
                     $veteran->addMediaFromUrl($image)->preservingOriginal()->toMediaCollection('cover');
+                    $veteran->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_1_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
+                    $veteran->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_2_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
+                    $veteran->addMediaFromUrl(url('/') . '/fixed/test/company_gallery_1_test.jpeg')->preservingOriginal()->toMediaCollection('gallery');
+                    $veteran->addMediaFromUrl(url('/') . '/fixed/test/medal_star.png')->preservingOriginal()->toMediaCollection('medals');
+                    $veteran->addMediaFromUrl(url('/') . '/fixed/test/medal_star.png')->preservingOriginal()->toMediaCollection('medals');
                 }
             }
         };

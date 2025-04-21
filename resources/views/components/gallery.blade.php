@@ -1,18 +1,9 @@
 <style>
-    .swiper {
+    .swiper.companyGallery {
         width: 100%;
         height: 100%;
         overflow: visible; /* чтобы было видно выход за пределы */
 
-    }
-
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     .swiper-button-disabled path {
         fill: gray;
@@ -21,7 +12,7 @@
 
 <div class="mx-10 grid grid-cols-12 overflow-hidden">
     <h1 class="mb-8 col-start-7 col-span-6 font-bold text-[6vw]">ГАЛЕРЕЯ</h1>
-    <div class="col-start-7 col-span-6 swiper mySwiper mb-8">
+    <div class="col-start-7 col-span-6 swiper companyGallery mb-8">
         <div class="swiper-wrapper">
             @foreach($images as $image)
                 <img class="!h-[512px] swiper-slide" src="{{$image->getUrl()}}" alt="">
@@ -37,12 +28,11 @@
         </svg>
     </div>
 </div>
-@script
-<!-- Initialize Swiper -->
+@push('page-js')
 <script>
 
-    window.onload = function () {
-        var swiper = new Swiper(".mySwiper", {
+    document.addEventListener('livewire:navigated', () => {
+        var swiper = new Swiper(".companyGallery", {
             slidesPerView: 1,
             spaceBetween: 5,
             navigation: {
@@ -50,6 +40,6 @@
                 prevEl: ".swiper-button-prev",
             },
         });
-    }
+    })
 </script>
-@endscript
+@endpush

@@ -8,3 +8,5 @@ import 'swiper/css';
 window.$ = window.jQuery = $
 window.Swiper = Swiper
 Swiper.use([Navigation, Pagination]);
+
+
