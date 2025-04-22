@@ -84,7 +84,7 @@
             </div>
         </div>
     </section>
-    <section class="sticky-content-wide">
+    <section class="sticky-content-wide" id="map">
         <h3>География проекта</h3>
         <x-map/>
     </section>

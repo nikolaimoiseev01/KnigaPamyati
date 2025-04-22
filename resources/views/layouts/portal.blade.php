@@ -18,7 +18,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-{{--<x-header/>--}}
+<x-header/>
     {{ $slot }}
 <x-footer/>
 @stack('page-js')

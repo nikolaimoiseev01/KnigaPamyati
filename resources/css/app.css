@@ -30,6 +30,10 @@ h3 {
     @apply font-medium leading-[95%] mb-4 text-[3vw];
 }
 
+a {
+    @apply text-bright-100 text-[1vw] hover:text-coral-500 transition cursor-pointer;
+}
+
 .content {
     @apply max-w-[1560px] mx-auto w-[90%];
 }
