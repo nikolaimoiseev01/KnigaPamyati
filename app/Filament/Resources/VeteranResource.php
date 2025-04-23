@@ -110,6 +110,8 @@ class VeteranResource extends Resource
                             Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
                                 ->collection('gallery')
                                 ->image()
+                                ->multiple()
+                                ->reorderable()
                                 ->imageEditor()
                                 ->label('Галерея')
                                 ->panelLayout('grid')
