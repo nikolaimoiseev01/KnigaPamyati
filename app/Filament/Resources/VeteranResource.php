@@ -122,6 +122,7 @@ class VeteranResource extends Resource
                                 ->image()
                                 ->multiple()
                                 ->imageEditor()
+                                ->reorderable()
                                 ->panelLayout('grid')
                                 ->label('Медали')
                                 ->imageEditorMode(2)
