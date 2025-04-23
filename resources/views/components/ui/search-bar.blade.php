@@ -5,7 +5,7 @@
         </svg>
     </div>
 
-    <input
+    <input {{$attributes->wire('model')}}
         type="text"
         placeholder="Поиск"
         class="bg-neutral-800 text-white placeholder-gray-300 outline-none w-full py-2"

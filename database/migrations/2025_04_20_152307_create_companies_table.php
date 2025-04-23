@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('date_start');
             $table->string('date_end');
             $table->text('description');
-            $table->text('main_fact');
             $table->json('timeline');
             $table->timestamps();
         });

@@ -51,7 +51,7 @@
     <!-- Выезжающая карточка -->
     <div
         x-show="show"
-        class="bg-gray-400 shadow-xl h-screen max-w-96 md:max-w-none w-full transform transition-transform"
+        class="bg-gray-400 shadow-xl h-screen max-w-lg md:max-w-none w-full transform transition-transform"
         x-transition:enter="ease-out duration-300"
         x-transition:enter-start="translate-x-full"
         x-transition:enter-end="translate-x-0"
@@ -59,12 +59,17 @@
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
     >
-        <div class="p-6 overflow-auto bg-white-500 h-full">
+        <div class="p-6 overflow-auto bg-dark-500 h-full">
             @if($district)
-                {{$district['name']}}
-                <div class="flex flex-col">
+                <h3 class="text-2xl">{{$district['name']}}</h3>
+                <p class="text-lg mb-8">{{$district['description']}}</p>
+                <div class="flex flex-wrap gap-8">
                     @foreach($district['company'] as $company)
-                        <a wire:navigate href="{{route('portal.company', $company['id'])}}">{{$company['name']}}</a>
+                        <a wire:navigate href="{{route('portal.company', $company['id'])}}"
+                           class="flex flex-col gap-4 p-4 bg-bright-100 text-dark-400 hover:bg-coral-500 hover:text-bright-100 max-w-52 rounded">
+                            <img src="{{$company->getFirstMediaUrl('cover')}}" alt="">
+                            <p class="bold text-lg ">{{$company['name']}}</p>
+                        </a>
                     @endforeach
                 </div>
             @endif

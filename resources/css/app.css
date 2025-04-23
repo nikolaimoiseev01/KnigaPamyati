@@ -17,7 +17,7 @@ h1 {
 }
 
 .text-secondary {
-    font-family: "Space Mono", sans-serif;
+    font-family: 'Space Mono', sans-serif;
     font-weight: 400;
     @apply text-dark-300;
 }
@@ -27,7 +27,7 @@ h2 {
 }
 
 h3 {
-    @apply font-medium leading-[95%] mb-4 text-[3vw];
+    @apply font-medium leading-[95%] mb-4 text-[3.5vw];
 }
 
 a {

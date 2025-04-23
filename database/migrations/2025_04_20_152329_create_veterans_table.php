@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('birth_dt');
             $table->string('death_dt');
             $table->json('timeline');
-            $table->string('main_fact');
             $table->timestamps();
         });
     }

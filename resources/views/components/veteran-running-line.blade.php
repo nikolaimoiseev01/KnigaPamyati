@@ -1,6 +1,6 @@
 <div class="space-y-4 overflow-hidden py-8">
     <div x-data="streamingCarousel('left')" x-init="start()" class="relative overflow-hidden h-80 w-full">
-        <div class="absolute top-0 left-0 flex gap-8 w-max" x-ref="wrapper">
+        <div class="absolute top-5 left-0 flex gap-8 w-max" x-ref="wrapper">
             @foreach($veterans as $veteran)
                 <x-card-veteran :veteran="$veteran" />
             @endforeach

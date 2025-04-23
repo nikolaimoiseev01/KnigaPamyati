@@ -1,4 +1,7 @@
-<header class="top-0 w-full bg-dark-600 border-b border-bright-85 z-50">
+<header x-data="{ isHome: window.location.pathname === '/' }"
+        :class="isHome ?
+        'top-0 w-full absolute z-50'
+        :'top-0 w-full bg-dark-600 border-b border-bright-85 z-50'">
     <div class="sticky-content-wide py-4 flex justify-between">
         <x-application-logo class="w-44"/>
         <div class="flex gap-4 text-bright-100">

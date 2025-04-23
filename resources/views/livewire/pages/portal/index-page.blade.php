@@ -3,15 +3,15 @@
              class="bg-cover bg-center h-screen w-full bg-[url(/fixed/welcome_background.jpeg)] relative mb-40">
         <div class="absolute w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-[#141414] z-1"></div>
         <x-application-logo class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4"/>
-        <div class="sticky-content-wide flex justify-between absolute left-1/2 -translate-x-1/2 z-10 w-full bottom-20">
-            <div class="flex gap-4">
+        <div class="sticky-content-wide grid grid-cols-12 absolute left-1/2 -translate-x-1/2 z-10 w-full bottom-20">
+            <div class="col-start-1 col-span-4 flex gap-4">
                 <span class="text-dark-300 text-[1vw]">Цитата</span>
                 <p class="text-[1vw] w-[445px]">«Все они, кто старше и кто моложе, горячо любили свою Родину, в годину
                     тяжелых для неё испытаний
                     отдали за неё свои жизни.
                     Люди! Никогда не забывайте о них.»</p>
             </div>
-            <div class="flex gap-4">
+            <div class="col-start-8 col-span-5 flex gap-4">
                 <svg class="w-4 mt-2" width="12" height="11" viewBox="0 0 12 11" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -29,23 +29,22 @@
 
 
     <section class="pb-48">
-        <div class="sticky-content-wide">
+        <div class="sticky-content-wide mb-8">
             <h2 class="text-[5vw]"><span
                     class="text-coral-500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Мы объединились,</span><br> чтобы
                 рассказать истории наших предприятий и наших сотрудников </h2>
         </div>
-        <div class="flex gap-32 sticky-content-secondary justify-center">
-            <p class="text-secondary whitespace-nowrap mt-auto text-[1.5vw]">Пока мы помним — они живы</p>
-            <div class="flex gap-8">
-                <div class="p-3 bg-white h-fit">
-                    <img src="/fixed/block_2_image.png" class="w-[165px] h-[106px]" alt="">
-                    <span class="text-dark-400">Завод</span>
-                </div>
-
-                <p class="text-[1.8vw] max-w-[678px]">— тех, кто остался ярчайшим образцом<br>трудовой и воинской
-                    доблести, <br>а после окончания войны снова совершил <br> подвиг, <span class="text-coral-500">подняв страну из руин.</span>
-                </p>
+        <div class="grid grid-cols-12 sticky-content-wide justify-center">
+            <p class="col-start-2 col-span-4 text-secondary whitespace-nowrap mt-auto text-[1.5vw]">Пока мы помним — они
+                живы</p>
+            <div class="col-start-6 col-span-2 p-3 bg-white h-fit max-w-[200px] mr-8 flex flex-col">
+                <img src="/fixed/block_2_image.png" class="w-full" alt="">
+                <span class="text-dark-400">Завод</span>
             </div>
+            <p class="col-start-8 col-span-5 text-[1.8vw] max-w-[678px]">— тех, кто остался ярчайшим образцом<br>трудовой
+                и воинской
+                доблести, <br>а после окончания войны снова совершил <br> подвиг, <span class="text-coral-500">подняв страну из руин.</span>
+            </p>
         </div>
     </section>
     <section style="background-image: url('/fixed/block_3_image.jpeg')"
@@ -89,10 +88,12 @@
         <x-map/>
     </section>
 
-    <section class="content text-dark-500 px-16 mb-48 flex"
+    <section class="content text-dark-500 px-16 mb-48 flex relative"
              style="background-image: url('/fixed/pismo_background.png')">
-        <div class="w-1/2 py-16 h-fit">
-            <h3 class="font-bold">Дорогие товарищи</h3>
+        <span class="text-secondary !text-dark-500 text-2xl absolute bottom-6 left-16">01</span>
+        <span class="text-secondary !text-dark-500 text-2xl absolute bottom-6 right-16">02</span>
+        <div class="w-1/2 pt-16 pb-40 h-fit">
+            <h2 class="font-bold text-5xl mb-8">Дорогие товарищи!</h2>
             <p class="text-2xl">Каждый год в этот день мы собираемся у памятных сооружений, чтобы почтить тех, кто отдал
                 свою жизнь
                 за нашу Родину, за освобождение народов Европы от фашистской чумы, за нас с вами.<br>
@@ -103,7 +104,7 @@
                 моложе, горячо любили свою Родину, в годину тяжелых для неё испытаний отдали за неё свои жизни.</p>
         </div>
         <div class="border-r-2 border-dashed border-dark-600 mx-8"></div>
-        <div class="w-1/2 py-16 h-fit">
+        <div class="w-1/2 pt-16 pb-40 h-fit">
             <p class="text-2xl mb-4">Люди! Никогда не забывайте о них.<br>
                 Сегодня, в День Победы, воскресим их в нашей памяти. Поимённо.</p>
             <p class="text-2xl font-bold">Вечная слава героям, павшим в боях за свободу и независимость нашей
@@ -117,11 +118,15 @@
         </div>
     </section>
 
+    <div class="sticky-content-wide">
+        <p class="text-2xl text-secondary">Книга памяти. Ветераны <br> великой победы</p>
+    </div>
+
     <section style="background-image: url('/fixed/block_3_image.jpeg')"
              class="bg-cover bg-center w-full bg-[url(/fixed/welcome_background.jpeg)] relative">
         <div
             class="absolute w-full h-full bg-[linear-gradient(180deg,_#141414_0%,_rgba(0,0,0,0.6)_59.32%,_#141414_99.27%)] z-0"></div>
-        <div class="py-48 sticky-content-wide">
+        <div class="pb-48 pt-16 sticky-content-wide">
             <h2 class=" text-[4vw] relative mb-16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Многие истории, которые вы прочтёте,<br>
                 воссозданы по воспоминаниям и журналистским<br>
@@ -130,6 +135,18 @@
                 если у вас есть дополнения или уточнения, а также<br>
                 ссылки на первоначальный источник, пожалуйста,<br>
                 свяжитесь с нами, заполнив форму обратной связи.</h2>
+            <div class="grid grid-cols-12 relative">
+                <p class="col-start-4 col-span-4 text-3xl leading-relaxed">— Истории боевых и трудовых подвигов
+                    участников Великой Отечественной войны и тружеников тыла</p>
+                <a class="col-start-8 col-span-5 flex items-center justify-center bg-bright-100 text-dark-500 h-fit text-xl py-3"
+                   href="">Форма обратной связи</a>
+            </div>
+            <x-slider-veterans-main-page/>
+            <div class="grid grid-cols-12 relative">
+                <a href="{{route('portal.veterans-list')}}" wire:navigate
+                   class="col-start-4 col-span-5 relative w-full flex items-center justify-center border border-coral-500 py-3 text-coral-500 mt-8 mx-auto transition hover:bg-coral-500 hover:text-bright-100">Изучить
+                    истории всех героев</a>
+            </div>
         </div>
     </section>
 </main>

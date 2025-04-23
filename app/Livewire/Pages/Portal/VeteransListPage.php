@@ -12,7 +12,8 @@ class VeteransListPage extends Component
 {
     public $districts;
     public $companies;
-
+    #[Url]
+    public $search;
     public $district;
     public $company;
 
@@ -23,13 +24,19 @@ class VeteransListPage extends Component
 
     public function render()
     {
+
         $this->veterans = Veteran::when($this->company, function ($q) {
             return $q->whereIn('company_id', (array)$this->company);
         })
             ->when($this->district, function ($q) {
                 return $q->whereHas('company', function ($q) {
-                    $q->where('district_id', $this->district);
+                    $q->where('federal_district_id', $this->district);
                 });
+            })
+            ->when($this->search, function ($q) {
+                return $q->whereRaw('LOWER(name) LIKE ?', ["%{$this->search}%"])
+                    ->orWhereRaw('LOWER(surname) LIKE ?', ["%{$this->search}%"])
+                    ->orWhereRaw('LOWER(thirdname) LIKE ?', ["%{$this->search}%"]);
             })
             ->take($this->take_cnt)
             ->get();

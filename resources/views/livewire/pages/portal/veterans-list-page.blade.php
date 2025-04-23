@@ -17,7 +17,7 @@
                 placeholder="Выберите предприятие"
                 class="min-w-max"
             />
-            <x-ui.search-bar/>
+            <x-ui.search-bar wire:model="search"/>
         <x-ui.link-button>Применить</x-ui.link-button>
     </form>
     <section class="flex flex-col justify-center">

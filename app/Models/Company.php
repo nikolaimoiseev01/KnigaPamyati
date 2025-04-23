@@ -20,4 +20,8 @@ class Company extends Model implements HasMedia
     {
         return $this->hasMany(Veteran::class);
     }
+
+    protected $casts = [
+        'timeline' => 'array'
+    ];
 }
