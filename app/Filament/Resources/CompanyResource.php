@@ -89,6 +89,8 @@ class CompanyResource extends Resource
                         Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
                             ->collection('gallery')
                             ->label('Галлерея')
+                            ->multiple()
+                            ->reorderable()
                             ->image()
                             ->imageEditor()
                             ->label('Галерея')
