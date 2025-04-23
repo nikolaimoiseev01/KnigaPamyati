@@ -13,6 +13,7 @@ class EditCompany extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('company_page')->label('Страница компании на портале')->url(route('portal.company', $this->record), shouldOpenInNewTab: true),
             Actions\DeleteAction::make(),
         ];
     }
