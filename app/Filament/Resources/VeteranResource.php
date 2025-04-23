@@ -117,8 +117,7 @@ class VeteranResource extends Resource
                                 ->panelLayout('grid')
                                 ->imageEditorMode(2)
                                 ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('1:1')
-                                ->columnSpan(['lg' => 1]),
+                                ->imageCropAspectRatio('1:1'),
                             Forms\Components\SpatieMediaLibraryFileUpload::make('medals')
                                 ->collection('medals')
                                 ->image()
