@@ -13,7 +13,7 @@ class EditVeteran extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\Action::make('veteran_page')->label('Страница ветерана на портале')->url(route('portal.veteran', $this->record)),
+            Actions\Action::make('veteran_page')->label('Страница ветерана на портале')->url(route('portal.veteran', $this->record), shouldOpenInNewTab: true),
             Actions\DeleteAction::make(),
         ];
     }
