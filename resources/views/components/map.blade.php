@@ -63,13 +63,13 @@
         color: #FFF;
     }
 
-    .rf-map svg {
+    #map-svg {
         width: 100%;
         height: 100%;
         filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.5));
     }
 
-    .rf-map path {
+    .rf-map #map-svg path {
         stroke: #050505;
         stroke-width: 1;
         stroke-linejoin: round;
@@ -190,16 +190,16 @@
     }
 </style>
 <div class="rf-map margin-top-20">
-    <div class="district"><b></b><span></span></div>
-    <div class="close-district">&times;</div>
-    <div id="RU-SAR" class="district-text">
-        <div class="saratov"></div>
+    <div class="hidden md:flex gap-2 flex-wrap mb-8">
+        @foreach($districts as $district)
+            <a wire:navigate data-district-slug="{{$district['slug']}}"
+               class="district-links w-max flex items-center justify-center border
+           border-coral-500 py-3 text-coral-500 transition px-4 hover:bg-coral-500 hover:text-bright-100">{{\Illuminate\Support\Str::replace('округ', '', $district['name'])}}</a>
+        @endforeach
     </div>
-    <div id="RU-SA" class="district-text">
-        <div class="saha"></div>
-    </div>
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 708.9 458.9" enable-background="new 0 0 708.9 458.9" xml:space="preserve">
+
+    <svg class="md:hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 708.9 458.9" enable-background="new 0 0 708.9 458.9" id="map-svg" xml:space="preserve">
 <path data-district-slug="szfo" data-district="Северо-Западный федеральный округ" data-id="enabled"
       data-region="Ненецкий автономный округ" data-code="RU-NEN"
       d="M207.4,112.8058h-3.3541l-2.6833,2.6833.6708,2.6833,3.3541.6708h.6708l.6708-.6708H207.4l.6708-.6708v.6708h0l-.6708.6708h.6708l.6708-.6708v-2.6833Zm30.8582,15.4291,1.3417.6708v2.0125l2.0125,1.3417,1.3417-2.0125-.6708-2.0125-.6708-2.0125h0v-1.3417l-.6708-1.3417H239.6v1.3417h-1.3417v3.3541Zm-18.7832-.6708-2.0125-.6708-2.6833-.6708-3.3541.6708h0l.6708.6708v1.3417h-1.3417l-.6708-.6708v-.6708l.6708-.6708-2.0125-.6708h-2.6833l-.6708-.6708-4.025.6708-4.025-.6708-.6708-.6708v0h0v.6708h-.6708v2.0125h0l-.6708-1.3417-1.3417-.6708-.6708-.6708-2.6833,2.0125-2.6833,2.6833-3.3541-1.3417-2.6833-2.0125.6708-2.0125.6708-1.3417-.6708-1.3417-.6708-1.3417,2.6833-1.3417,2.0125-.6708,3.3541,2.0125.6708-.6708.6708-.6708v-.6708h.6708v-4.025l-2.0125-2.6833-2.6833-2.0125-.6708-2.0125-.6708-.6708v5.3666l-4.025,3.3541-3.3541,2.6833v4.025l-2.6833,2.0125-1.3417,1.3417v2.0125l2.6833,4.025,2.0125,4.025.6708,1.3417.6708.6708v.6708h1.3417v-.6708l1.3417-.6708h1.3417l1.3417.6708,1.3417,1.3417h4.6958l5.3666.6708,1.3417-.6708.6708-.6708.6708.6708h2.6833l3.3542,2.6833,4.025,3.3541,20.1249,12.0749.6708.6708.6708.6708,4.025-.6708,4.6958-1.3417v-.6708l.6708-1.3417.6708.6708h.6708l1.3417-.6708,1.3417-.6708,1.3417-.6708,1.3417-.6708.6708-.6708h1.3417l1.2972.5064,1.3861-1.848v-1.3417l-.6708-.6708-1.3417-2.0125.6708-.6708.6708-.6708,1.3417-1.3417v-1.3417l-2.0125-3.3541-2.6833-2.6833-3.3541-2.6833-.6708-.6708-.6708-.6708-.6708.6708-.6708.6708h0l-.6708-.6708h-.6708l-.6708.6708v4.025l-.6708,4.025h0l-.6708-.6708h-.6708l-1.3417.6708-1.3417-.6708h-.6708l-.6708,1.3417-2.0125.6708-.6708-1.3417.6708-1.3417,1.3417-.6708h.6708v-1.3417l-.6708-1.3417h.6708l-4.6958-.6708-4.025.6708-1.3417-2.0125-4.025-1.3417-2.6833.6708v.6708l-.6708.6708-.6708-1.3417H214.78l-.6708.6708h-.6708l.6708-.6708v-1.3417l-1.3417-.6708h-1.3417l.6708-.6708v-.6708h1.3417l1.3417.6708.6708-1.3417.6708-1.3417h.6708l.6708-.6708v-.6708h2.0124Z"
@@ -603,7 +603,7 @@
 
 
                 function makeRegionsClick() {
-                    $('.rf-map svg path').on('click', function () {
+                    $('.rf-map svg path, .district-links').on('click', function () {
                         slug = $(this).attr('data-district-slug');
                         Livewire.dispatch('updateRightCardDistrict', {slug: slug})
                         window.dispatchEvent(new CustomEvent('open-right-card', {

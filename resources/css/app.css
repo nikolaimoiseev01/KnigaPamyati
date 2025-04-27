@@ -8,7 +8,7 @@
 }
 
 body {
-    @apply text-bright-100 bg-dark-600;
+    @apply text-bright-100 bg-dark-600 md:text-sm;
 }
 h1 {
     font-family: 'Bebas Neue Pro', sans-serif;
@@ -23,15 +23,26 @@ h1 {
 }
 
 h2 {
-    @apply font-medium tracking-[-0.02em] leading-[90%] mb-4;
+    @apply font-medium tracking-[-0.02em] leading-[100%] mb-4;
+}
+@layer utilities {
+    .no-absolute {
+        top: inherit !important;
+        bottom: inherit !important;
+        left: inherit !important;
+        right: inherit !important;
+        position: relative !important;
+        transform: inherit !important;
+
+    }
 }
 
 h3 {
-    @apply font-medium leading-[95%] mb-4 text-[3.5vw];
+    @apply font-medium leading-[95%] mb-4 text-6xl md:text-3xl;
 }
 
 a {
-    @apply text-bright-100 text-[1vw] hover:text-coral-500 transition cursor-pointer;
+    @apply text-bright-100 text-xl lg:text-lg md:!text-base hover:text-coral-500 transition cursor-pointer;
 }
 
 .content {

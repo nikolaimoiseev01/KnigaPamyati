@@ -59,6 +59,11 @@
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
     >
+        <svg x-on:click="show = false" class="absolute w-4 top-4 right-4" viewBox="0 0 19 18" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path class="stroke-white" d="M16.5742 1.5L1.57422 16.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+            <path class="stroke-white" d="M16.5742 16.5L1.57422 1.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+
         <div class="p-6 overflow-auto bg-dark-500 h-full">
             @if($district)
                 <h3 class="text-2xl">{{$district['name']}}</h3>

@@ -1,4 +1,4 @@
-<footer class="w-full text-dark-500 flex flex-col pt-40 pb-16 bg-cover bg-top mt-16"
+<footer class="w-full text-dark-500 flex flex-col pt-40 pb-16 bg-cover bg-top mt-16 md:mt-8"
         style="background-image: url('/fixed/footer_background_2.png')">
     <div class="sticky-content-wide">
         <div class="w-full flex justify-between items-center">
@@ -7,5 +7,4 @@
         </div>
         <livewire:components.contact-form/>
     </div>
-
 </footer>

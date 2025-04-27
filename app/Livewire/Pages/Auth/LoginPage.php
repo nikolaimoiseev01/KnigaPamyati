@@ -22,6 +22,8 @@ class LoginPage extends Component
     {
         $this->validate();
 
+
+
         $this->form->authenticate();
 
         Session::regenerate();
