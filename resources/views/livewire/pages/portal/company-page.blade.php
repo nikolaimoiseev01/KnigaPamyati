@@ -1,7 +1,7 @@
 <main class="flex-1">
     <section class="mb-16">
         <div class="grid grid-cols-12 md:flex md:flex-col md:gap-4 items-end gap-2 mb-16">
-            <img class="col-start-1 col-span-6" src="{{$company->getFirstMediaUrl('cover')}}" alt="">
+            <img class="col-start-1 col-span-6 max-h-[70vh] w-full object-cover" src="{{$company->getFirstMediaUrl('cover')}}" alt="">
             <div class="col-start-7 col-span-6 md:col-start-1 md:col-span-12 md:mx-auto flex flex-col">
                 <h1 class="font-bold text-8xl lg:text-6xl">{{$company['name']}}</h1>
                 <h1 class="font-light text-8xl lg:text-6xl">{{$company['date_start']}}-{{$company['date_end']}}</h1>
