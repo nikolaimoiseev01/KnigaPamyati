@@ -49,10 +49,16 @@ class CompanyResource extends Resource
                                 ->imageCropAspectRatio('1:1')
                                 ->uploadProgressIndicatorPosition('left'),
                             Forms\Components\Grid::make()->schema([
-                                Forms\Components\TextInput::make('name')
-                                    ->required()
-                                    ->label('Название')
-                                    ->maxLength(255),
+                                Forms\Components\Grid::make()->schema([
+                                    Forms\Components\TextInput::make('name')
+                                        ->required()
+                                        ->label('Название')
+                                        ->maxLength(255),
+                                    Forms\Components\Select::make('federal_district_id')
+                                        ->relationship('federal_district', 'name')
+                                        ->label('Округ')
+                                        ->required()
+                                ]),
                                 Forms\Components\Grid::make()->schema([
                                     Forms\Components\TextInput::make('date_start')
                                         ->required()
