@@ -1,10 +1,10 @@
 <main class="flex-1">
     <div style="background-image: url('/fixed/veterans_list_background.jpeg')" class="pb-16">
         <div class="w-full text-center py-16">
-            <h1 class="text-[5vw]">ВЕТЕРАНЫ ВЕЛИКОЙ ПОБЕДЫ</h1>
+            <h1 class="text-6xl lg:text-5xl md:!text-4xl">ВЕТЕРАНЫ ВЕЛИКОЙ ПОБЕДЫ</h1>
         </div>
     </div>
-    <form wire:submit="update_list()" class="filters flex justify-center gap-8 sticky-content-wide py-8">
+    <form wire:submit="update_list()" class="filters flex justify-center gap-8 sticky-content-wide py-8 md:flex-col">
             <x-ui.dropdown
                 wire:model="district"
                 :opts="$districts"
