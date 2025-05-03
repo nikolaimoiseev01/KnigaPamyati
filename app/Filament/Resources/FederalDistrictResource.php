@@ -35,8 +35,7 @@ class FederalDistrictResource extends Resource
                         ->required()
                         ->maxLength(255),
                     Forms\Components\Textarea::make('description')
-                        ->label('Описание')
-                        ->maxLength(255),
+                        ->label('Описание'),
                 ])
 
             ]);
