@@ -21,7 +21,7 @@
         <x-ui.link-button>Применить</x-ui.link-button>
     </form>
     <section class="flex flex-col justify-center">
-        <div class="sticky-content-wide m-auto flex gap-4 flex-wrap justify-center mb-16">
+        <div class="sticky-content-wide m-auto flex gap-6 flex-wrap justify-center mb-16">
             @foreach($veterans as $veteran)
                 <x-card-veteran :veteran="$veteran"/>
             @endforeach
