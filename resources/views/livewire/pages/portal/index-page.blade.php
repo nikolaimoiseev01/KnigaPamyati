@@ -137,7 +137,6 @@
                 Сегодня, в День Победы, воскресим их в нашей памяти. Поимённо.</p>
             <p class="text-2xl lg:text-lg font-bold">Вечная слава героям, павшим в боях за свободу и независимость нашей
                 Родины!</p>
-            <p>(«историческое выступление на одном из наших заводов»)</p>
             <div class="p-4 bg-bright-100 w-fit mt-8">
                 <img src="/fixed/logo_victory.png" class="w-60 bg-dark-200" alt="">
                 <p class="text-sm mt-4 font-bold">Логотип 80-летия Победы</p>
@@ -167,8 +166,6 @@
                 <p class="col-start-4 lg:col-start-1 lg:col-span-8 col-span-4 text-3xl lg:text-xl md:text-base leading-relaxed">
                     — Истории боевых и трудовых подвигов
                     участников Великой Отечественной войны и тружеников тыла</p>
-                <a class="col-start-8 col-span-5 flex items-center justify-center bg-bright-100 text-dark-500 h-fit text-xl py-3"
-                   href="">Форма обратной связи</a>
             </div>
             <x-slider-veterans-main-page/>
             <div class="grid grid-cols-12 relative">

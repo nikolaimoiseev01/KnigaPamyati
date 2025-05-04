@@ -40,7 +40,6 @@ class VeteranResource extends Resource
                                 ->collection('cover')
                                 ->label('Обложка')
                                 ->imagePreviewHeight('250')
-                                ->panelLayout('grid')
                                 ->loadingIndicatorPosition('left')
                                 ->panelAspectRatio('2:1')
                                 ->panelLayout('integrated')
@@ -49,8 +48,6 @@ class VeteranResource extends Resource
                                 ->image()
                                 ->imageEditor()
                                 ->imageEditorMode(2)
-                                ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('1:1')
                                 ->uploadProgressIndicatorPosition('left'),
                             Forms\Components\Grid::make()->schema([
                                 Forms\Components\TextInput::make('name')
@@ -116,8 +113,7 @@ class VeteranResource extends Resource
                                 ->label('Галерея')
                                 ->panelLayout('grid')
                                 ->imageEditorMode(2)
-                                ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('1:1'),
+                                ->imageResizeMode('cover'),
                             Forms\Components\SpatieMediaLibraryFileUpload::make('medals')
                                 ->collection('medals')
                                 ->image()
@@ -127,8 +123,7 @@ class VeteranResource extends Resource
                                 ->panelLayout('grid')
                                 ->label('Медали')
                                 ->imageEditorMode(2)
-                                ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('1:1'),
+                                ->imageResizeMode('cover'),
                         ])->collapsible()
                     ])->columnSpanFull()
             ]);

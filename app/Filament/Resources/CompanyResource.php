@@ -46,7 +46,6 @@ class CompanyResource extends Resource
                                 ->imageEditor()
                                 ->imageEditorMode(2)
                                 ->imageResizeMode('cover')
-                                ->imageCropAspectRatio('1:1')
                                 ->uploadProgressIndicatorPosition('left'),
                             Forms\Components\Grid::make()->schema([
                                 Forms\Components\Grid::make()->schema([
@@ -103,7 +102,6 @@ class CompanyResource extends Resource
                             ->panelLayout('grid')
                             ->imageEditorMode(2)
                             ->imageResizeMode('cover')
-                            ->imageCropAspectRatio('1:1')
                             ->columnSpan(['lg' => 1]),
                     ])->columnSpanFull()
             ]);
