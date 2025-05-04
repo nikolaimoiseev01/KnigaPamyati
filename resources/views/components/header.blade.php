@@ -6,7 +6,7 @@
         <x-application-logo class="w-44"/>
         <div class="flex gap-4 text-bright-100 md:hidden">
             <a wire:navigate href="/">Главная</a>
-            <a href="#map">Предприятия</a>
+            <a href="/#map">Предприятия</a>
             <a wire:navigate href="{{route('portal.veterans-list')}}">Ветераны</a>
         </div>
         <div class="hidden md:flex  justify-center">
