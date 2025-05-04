@@ -1,7 +1,7 @@
 <main class="flex-1">
     <section class="mb-16">
         <div class="grid grid-cols-12 items-end gap-4 mb-16  md:flex md:flex-col md:gap-4">
-            <img class="col-start-1 w-full max-h-[700px] object-cover col-span-6"
+            <img class="col-start-1 w-full max-h-[700px] object-contain col-span-6"
                  src="{{$veteran->getFirstMediaUrl('cover')}}" alt="">
             <div class="col-start-7 col-span-6 md:col-start-1 md:col-span-12 md:mx-auto flex flex-col">
                 <div class="flex md:flex-wrap md:justify-center">
