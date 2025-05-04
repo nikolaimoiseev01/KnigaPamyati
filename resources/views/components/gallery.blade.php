@@ -15,7 +15,8 @@
     <div class="col-start-7 col-span-6 col-span-6 lg:col-start-1 lg:col-span-12 swiper companyGallery mb-8">
         <div class="swiper-wrapper">
             @foreach($images as $image)
-                <img class="!h-[512px] swiper-slide object-contain" src="{{$image->getUrl()}}" alt="">
+                <img @click="window.dispatchEvent(new CustomEvent('open-image', { detail: '{{$image->getUrl()}}' }))"
+                     class="!h-[512px] swiper-slide object-contain" src="{{$image->getUrl()}}" alt="">
             @endforeach
         </div>
     </div>
