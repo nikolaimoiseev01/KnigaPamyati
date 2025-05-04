@@ -17,7 +17,7 @@ class VeteransListPage extends Component
     public $district;
     public $company;
 
-    public $take_cnt = 10;
+    public $take_cnt = 50;
     public $veterans;
 
     use WithPagination;
@@ -51,7 +51,7 @@ class VeteransListPage extends Component
 
     public function load_more()
     {
-        $this->take_cnt += 10;
+        $this->take_cnt += 30;
     }
 
     public function update_list()
