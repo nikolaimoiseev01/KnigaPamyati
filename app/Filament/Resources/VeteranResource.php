@@ -59,7 +59,6 @@ class VeteranResource extends Resource
                                     ->label('Фамилия')
                                     ->maxLength(255),
                                 Forms\Components\TextInput::make('thirdname')
-                                    ->required()
                                     ->label('Отчество')
                                     ->maxLength(255),
                             ])->columns(1)->columnSpan(2)
@@ -71,11 +70,9 @@ class VeteranResource extends Resource
                                 ->required(),
                             Forms\Components\TextInput::make('birth_dt')
                                 ->label('Дата рождения')
-                                ->required()
                                 ->maxLength(255),
                             Forms\Components\TextInput::make('death_dt')
                                 ->label('Дата смерти')
-                                ->required()
                                 ->maxLength(255),
                         ])->columns(3),
                         Forms\Components\Textarea::make('description')
@@ -84,7 +81,6 @@ class VeteranResource extends Resource
                             ->required(),
                         Forms\Components\TextInput::make('position')
                             ->label('Профессия')
-                            ->required()
                             ->maxLength(255),
                         Forms\Components\Section::make('Таймлайн')->schema([
                             Forms\Components\Builder::make('timeline')->blocks([

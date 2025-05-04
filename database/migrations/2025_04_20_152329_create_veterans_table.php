@@ -16,11 +16,11 @@ return new class extends Migration
             $table->foreignId('company_id')->constrained();
             $table->string('name');
             $table->string('surname');
-            $table->string('thirdname');
+            $table->string('thirdname')->nullable();
             $table->text('description');
-            $table->string('position');
-            $table->string('birth_dt');
-            $table->string('death_dt');
+            $table->string('position')->nullable();
+            $table->string('birth_dt')->nullable();
+            $table->string('death_dt')->nullable();
             $table->json('timeline');
             $table->timestamps();
         });
