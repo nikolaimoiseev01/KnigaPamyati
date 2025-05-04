@@ -605,10 +605,12 @@
                 function makeRegionsClick() {
                     $('.rf-map svg path, .district-links').on('click', function () {
                         slug = $(this).attr('data-district-slug');
-                        Livewire.dispatch('updateRightCardDistrict', {slug: slug})
-                        window.dispatchEvent(new CustomEvent('open-right-card', {
-                            detail: 'right-card-district'
-                        }));
+                        if(slug !== 'skfo') {
+                            Livewire.dispatch('updateRightCardDistrict', {slug: slug})
+                            window.dispatchEvent(new CustomEvent('open-right-card', {
+                                detail: 'right-card-district'
+                            }));
+                        }
                     })
                 }
 
