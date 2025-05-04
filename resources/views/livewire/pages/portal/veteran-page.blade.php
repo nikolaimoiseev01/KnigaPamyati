@@ -15,8 +15,7 @@
                 </div>
                 <h1 class="font-bold text-8xl lg:text-6xl uppercase md:text-center">{{$veteran['surname']}}<br
                         class="md:hidden">{{$veteran['name']}}<br class="md:hidden">{{$veteran['thirdname']}}</h1>
-                <h1 class="font-light text-8xl lg:text-6xl md:text-center">{{$veteran['birth_dt']}}
-                    -{{$veteran['death_dt']}}</h1>
+                <h1 class="font-light text-8xl lg:text-6xl md:text-center">{{$dates_str}}</h1>
             </div>
         </div>
         <div class="sticky-content-wide"><p class="text-2xl lg:text-xl md:!text-base">{{$veteran['description']}}</p>
