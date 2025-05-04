@@ -5,9 +5,6 @@
         overflow: visible; /* чтобы было видно выход за пределы */
 
     }
-    .swiper-button-disabled path {
-        fill: gray;
-    }
 </style>
 
 <div class="mx-10 grid grid-cols-12 overflow-hidden">

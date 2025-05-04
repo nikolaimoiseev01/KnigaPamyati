@@ -59,3 +59,7 @@ a {
 input[type="text"], input[type="email"], input[type="password"], textarea {
     @apply border border-dark-500 focus:border-dark-600 outline-none !ring-0;
 }
+
+.swiper-button-disabled path {
+    fill: gray;
+}
