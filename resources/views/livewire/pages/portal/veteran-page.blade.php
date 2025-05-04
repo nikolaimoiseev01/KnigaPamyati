@@ -5,14 +5,9 @@
                 @click="window.dispatchEvent(new CustomEvent('open-image', { detail: '{{$veteran->getFirstMediaUrl('cover')}}' }))"
                 class="col-start-1 w-full max-h-[700px] object-contain col-span-6"
                  src="{{$veteran->getFirstMediaUrl('cover')}}" alt="">
+
             <div class="col-start-7 col-span-6 md:col-start-1 md:col-span-12 md:mx-auto flex flex-col">
-                <div class="flex md:flex-wrap md:justify-center">
-                    @foreach($veteran->getMedia('medals') as $image)
-                        <img
-                            @click="window.dispatchEvent(new CustomEvent('open-image', { detail: '{{$image->getUrl()}}' }))"
-                            src="{{$image->getUrl()}}" class="w-64 md:w-20" alt="">
-                    @endforeach
-                </div>
+                <x-medals-gallery :medalss="$veteran->getMedia('medals')"/>
                 <h1 class="font-bold text-8xl lg:text-6xl uppercase md:text-center">{{$veteran['surname']}}<br
                         class="md:hidden">{{$veteran['name']}}<br class="md:hidden">{{$veteran['thirdname']}}</h1>
                 <h1 class="font-light text-8xl lg:text-6xl md:text-center">{{$dates_str}}</h1>
