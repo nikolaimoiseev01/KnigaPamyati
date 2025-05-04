@@ -19,6 +19,22 @@
                 start() {
                     this.cards = Array.from(this.$refs.wrapper.children);
 
+                    const totalWidth = this.cards.length * (this.cardWidth + this.gap) - this.gap;
+                    const containerWidth = this.$el.offsetWidth;
+
+                    if (totalWidth <= containerWidth) {
+                        // Центрируем карточки вручную
+                        this.$refs.wrapper.style.position = 'relative';
+                        this.$refs.wrapper.style.left = '50%';
+                        this.$refs.wrapper.style.transform = 'translateX(-50%)';
+                        this.cards.forEach((el, i) => {
+                            el.style.position = 'relative';
+                            el.style.left = 'unset';
+                        });
+                        return; // Не запускаем анимацию
+                    }
+
+                    // Иначе запускаем анимацию
                     this.cards.forEach((el, i) => {
                         el.style.position = 'absolute';
                         el.style.left = `${i * (this.cardWidth + this.gap)}px`;
@@ -55,50 +71,6 @@
         }
     </script>
 @endpush
-
-{{--<style>--}}
-{{--    .swiper {--}}
-{{--        /*width: 100%;*/--}}
-{{--        height: 100%;--}}
-
-{{--    }--}}
-
-{{--    .swiper-button-disabled path {--}}
-{{--        fill: gray;--}}
-{{--    }--}}
-{{--</style>--}}
-
-{{--<div class="mx-10 ">--}}
-{{--    <h1 class="mb-8 font-bold text-[6vw]">ГАЛЕРЕЯ</h1>--}}
-{{--    <div class="swiper veteranRunningLine mb-8">--}}
-{{--        <div class="swiper-wrapper">--}}
-{{--            @foreach($veterans as $veteran)--}}
-{{--                <div class="swiper-slide min-w-52 w-52 flex flex-col bg-coral-300 p-4">--}}
-{{--                    <img src="{{ $veteran->getFirstMediaUrl('cover') }}" alt=""--}}
-{{--                         class="h-52 object-cover rounded">--}}
-{{--                    <p class="text-sm mt-2 font-bold text-dark-600">{{ $veteran['surname'] }} {{ $veteran['name'] }}</p>--}}
-{{--                    <p class="text-xs text-gray-500">{{$veteran['position']}}</p>--}}
-{{--                    <p class="text-xs text-dark-500">{{$veteran['birth_dt'] }} - {{ $veteran['death_dt'] }} гг.</p>--}}
-{{--                </div>--}}
-{{--            @endforeach--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--@script--}}
-{{--<script>--}}
-{{--    window.addEventListener('load', function () {--}}
-{{--        var swiper2 = new Swiper(".veteranRunningLine", {--}}
-{{--            slidesPerView: 5,--}}
-{{--            spaceBetween: 15,--}}
-{{--            loop: true,--}}
-{{--            // autoplay: {--}}
-{{--            //     delay: 0,--}}
-{{--            //     disableOnInteraction: false--}}
-{{--            // },--}}
-{{--        });--}}
-{{--    })--}}
-{{--</script>--}}
-{{--@endscript--}}
 
 
 
