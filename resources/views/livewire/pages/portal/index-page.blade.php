@@ -103,7 +103,7 @@
                             fill="white" fill-opacity="0.85"/>
                     </svg>
                     <p class="w-80 md:w-full">В 2023 году в России оставалось <span
-                            class="text-coral-500">всего 1 759</span>
+                            class="text-coral-500">всего 1759</span>
                         участников Великой Отечественной войны</p>
                 </div>
             </div>
