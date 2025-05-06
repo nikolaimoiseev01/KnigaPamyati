@@ -8,8 +8,14 @@
 
             <div class="col-start-7 col-span-6 md:col-start-1 md:col-span-12 md:mx-auto flex flex-col">
                 <x-medals-gallery :medalss="$veteran->getMedia('medals')"/>
-                <h1 class="font-bold text-8xl lg:text-6xl uppercase md:text-center">{{$veteran['surname']}}<br
-                        class="md:hidden">{{$veteran['name']}}&nbsp;<br class="md:hidden">{{$veteran['thirdname']}}</h1>
+                <h1 class="font-bold text-8xl lg:text-6xl uppercase md:hidden flex flex-col">
+                    <span>{{$veteran['surname']}}</span>
+                    <span>{{$veteran['name']}}</span>
+                    <span>{{$veteran['thirdname']}}</span>
+                </h1>
+                <h1 class="font-bold text-8xl lg:text-6xl uppercase hidden text-center md:block">
+                    {{$veteran['surname']}} {{$veteran['name']}} {{$veteran['thirdname']}}
+                </h1>
                 <h1 class="font-light text-8xl lg:text-6xl md:text-center">{{$dates_str}}</h1>
             </div>
         </div>
