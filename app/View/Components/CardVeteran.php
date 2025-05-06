@@ -9,6 +9,7 @@ use Illuminate\View\Component;
 class CardVeteran extends Component
 {
     public $veteran;
+    public $dates_str;
     /**
      * Create a new component instance.
      */
@@ -22,6 +23,13 @@ class CardVeteran extends Component
      */
     public function render(): View|Closure|string
     {
+        if($this->veteran['death_dt']) {
+            $this->dates_str = $this->veteran['birth_dt'] . ' - ' . $this->veteran['death_dt'];
+        } elseif ($this->veteran['birth_dt']) {
+            $this->dates_str = 'р. ' . $this->veteran['birth_dt'];
+        } else {
+            $this->dates_str = '';
+        }
         return view('components.card-veteran');
     }
 }

@@ -4,5 +4,5 @@
          class="w-full h-52 object-cover rounded">
     <p class="text-sm mt-2 font-bold text-dark-600">{{ $veteran['surname'] }} {{ $veteran['name'] }}</p>
     <p class="text-xs text-gray-500">{{$veteran['position']}}</p>
-    <p class="text-xs italic  text-dark-500">{{$veteran['birth_dt'] }} - {{ $veteran['death_dt'] }}</p>
+    <p class="text-xs italic  text-dark-500">{{$dates_str}}</p>
 </a>
