@@ -27,6 +27,7 @@ export default {
                     500: '#202020',
                     600: '#141414'
                 },
+                bg_color: '#1D1C1C',
                 coral: {
                     300: '#F5E0B8',
                     500: '#CE624F'

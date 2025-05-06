@@ -8,7 +8,7 @@
 }
 
 body {
-    @apply text-bright-100 bg-dark-600 md:text-sm;
+    @apply text-bright-100 bg-bg_color md:text-sm;
 }
 h1 {
     font-family: 'Bebas Neue Pro', sans-serif;

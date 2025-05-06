@@ -2,7 +2,7 @@
 
     <section style="background-image: url('/fixed/welcome_background.jpeg')"
              class="bg-cover bg-center h-screen w-full bg-[url(/fixed/welcome_background.jpeg)] relative mb-40 md:mb-20 sm:flex sm:flex-col sm:gap-4">
-        <div class="absolute w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-[#141414] z-1"></div>
+        <div class="absolute w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-[#1D1C1C] z-1"></div>
         <x-application-logo
             class="absolute top-1/2 left-1/2 md:top-80 -translate-x-1/2 -translate-y-1/2 w-3/4 sm:no-absolute sm:mx-auto sm:pt-16 sm:mb-4"/>
 
@@ -71,7 +71,7 @@
     <section style="background-image: url('/fixed/block_3_image.jpeg')"
              class="bg-cover bg-center w-full bg-[url(/fixed/welcome_background.jpeg)] relative">
         <div
-            class="absolute w-full h-full bg-[linear-gradient(180deg,_#141414_0%,_rgba(0,0,0,0.6)_59.32%,_#141414_99.27%)] z-0"></div>
+            class="absolute w-full h-full bg-[linear-gradient(180deg,_#1D1C1C_0%,_rgba(0,0,0,0.6)_59.32%,_#1D1C1C_99.27%)] z-0"></div>
         <div class="pt-48 pb-20 lg:pt-20 md:!pt-10 sticky-content-wide">
             <h2 class="text-[64px] lg:text-5xl !md:text-4xl sm:!text-xl relative mb-16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Пока нами собрана лишь <span class="text-coral-500">часть имён
@@ -152,7 +152,7 @@
     <section style="background-image: url('/fixed/block_3_image.jpeg')"
              class="bg-cover bg-center w-full bg-[url(/fixed/welcome_background.jpeg)] relative">
         <div
-            class="absolute w-full h-full bg-[linear-gradient(180deg,_#141414_0%,_rgba(0,0,0,0.6)_59.32%,_#141414_99.27%)] z-0"></div>
+            class="absolute w-full h-full bg-[linear-gradient(180deg,_#1D1C1C_0%,_rgba(0,0,0,0.6)_59.32%,_#1D1C1C_99.27%)] z-0"></div>
         <div class="pb-48 pt-16 sticky-content-wide md:pb-20 sm:!pb-8">
             <h2 class="text-[64px] lg:text-5xl !md:text-4xl sm:!text-xl relative mb-16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Многие истории, которые вы прочтёте,
