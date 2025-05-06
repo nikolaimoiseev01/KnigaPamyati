@@ -8,7 +8,7 @@
         @foreach($medals as $medal)
             <img
                 @click="window.dispatchEvent(new CustomEvent('open-image', { detail: '{{$medal->getUrl()}}' }))"
-                src="{{$medal->getUrl()}}" class="!w-fit max-w-fit max-h-40 swiper-slide" alt="">
+                src="{{$medal->getUrl()}}" class="!w-auto max-h-40 swiper-slide" alt="">
         @endforeach
     </div>
     <div class="col-start-7 col-span-6 w-[90%] max-w-96 flex gap-4 mt-8 lg:col-start-1 lg:col-span-12 lg:mx-auto">
