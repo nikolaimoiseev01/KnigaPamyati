@@ -3,7 +3,6 @@
     <div class="sticky-content-wide">
         <div class="w-full flex justify-between items-center mb-4">
             <p>КНИГА ПАМЯТИ. ВЕТЕРАНЫ ВЕЛИКОЙ ПОБЕДЫ</p>
-            <img src="/fixed/ussr_logo.png" class="w-16" alt="">
         </div>
         <div class="flex justify-between md:flex-col gap-4">
             <div class="flex flex-col">

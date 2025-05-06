@@ -17,7 +17,7 @@
             <div style="background-image: url('/fixed/block_3_image.jpeg')"
                  class="bg-cover bg-center w-full bg-[url(/fixed/welcome_background.jpeg)] relative">
                 <div
-                    class="absolute w-full h-full bg-[linear-gradient(180deg,_#141414_0%,_rgba(0,0,0,0.6)_59.32%,_#141414_99.27%)] z-0"></div>
+                    class="absolute w-full h-full bg-[linear-gradient(180deg,_#1D1C1C_0%,_rgba(0,0,0,0.6)_59.32%,_#1D1C1C_99.27%)] z-0"></div>
                 <div class="py-48 md:py-20 sm:py-4 sticky-content-wide">
                     <h2 class="text-[64px] lg:text-5xl !md:text-4xl sm:!text-xl relative mb-16">{!! $event['data']['text'] !!}</h2>
                 </div>

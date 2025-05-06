@@ -76,7 +76,7 @@
     }
 
     .rf-map [data-code] {
-        fill: #252525;
+        fill: #434343;
         transition: fill 0.2s;
     }
 
