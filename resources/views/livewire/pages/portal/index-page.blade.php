@@ -152,7 +152,7 @@
         <div
             class="absolute w-full h-full bg-[linear-gradient(180deg,_#1D1C1C_0%,_rgba(0,0,0,0.6)_59.32%,_#1D1C1C_99.27%)] z-0"></div>
         <div class="pb-48 pt-16 sticky-content-wide md:pb-20 sm:!pb-8">
-            <h2 class="text-[64px] lg:text-5xl !md:text-4xl sm:!text-xl relative mb-16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h2 class="text-[48px] lg:text-5xl !md:text-4xl sm:!text-xl relative mb-16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Многие истории, которые вы прочтёте,
                 воссозданы по воспоминаниям и журналистским
                 публикациям, поэтому <span class="text-coral-500">могут содержать неточности.</span>
