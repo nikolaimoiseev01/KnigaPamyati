@@ -93,7 +93,7 @@ class VeteranResource extends Resource
                                         ->enabledToolbars([
                                             ToolbarItem::CLEAR,
                                             ToolbarItem::BOLD, ToolbarItem::ITALIC, ToolbarItem::UNDERLINE,
-                                            ToolbarItem::LINK, ToolbarItem::TEXT_COLOR, ToolbarItem::BACKGROUND_COLOR
+                                            ToolbarItem::LINK, ToolbarItem::TEXT_COLOR
                                         ]),
                                 ])->label('Большой блок')
                             ])->addActionLabel('Добавить блок')->label('')->collapsible(),
