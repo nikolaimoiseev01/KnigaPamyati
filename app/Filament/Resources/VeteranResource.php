@@ -91,11 +91,10 @@ class VeteranResource extends Resource
                                 Block::make('big_block')->schema([
                                     FilamentLexicalEditor::make('text')
                                         ->enabledToolbars([
-                                        ToolbarItem::UNDO, ToolbarItem::REDO,
-                                        ToolbarItem::QUOTE,
-                                        ToolbarItem::BOLD, ToolbarItem::ITALIC, ToolbarItem::UNDERLINE,
-                                        ToolbarItem::LINK, ToolbarItem::TEXT_COLOR, ToolbarItem::BACKGROUND_COLOR
-                                    ]),
+                                            ToolbarItem::CLEAR,
+                                            ToolbarItem::BOLD, ToolbarItem::ITALIC, ToolbarItem::UNDERLINE,
+                                            ToolbarItem::LINK, ToolbarItem::TEXT_COLOR, ToolbarItem::BACKGROUND_COLOR
+                                        ]),
                                 ])->label('Большой блок')
                             ])->addActionLabel('Добавить блок')->label('')->collapsible(),
                         ]),
