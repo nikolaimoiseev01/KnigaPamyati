@@ -83,7 +83,7 @@ class CompanyResource extends Resource
                                 Block::make('big_block')->schema([
                                     FilamentLexicalEditor::make('text')
                                         ->enabledToolbars([
-                                            ToolbarItem::CLEAR,
+                                            ToolbarItem::CLEAR, ToolbarItem::QUOTE,
                                             ToolbarItem::BOLD, ToolbarItem::ITALIC, ToolbarItem::UNDERLINE,
                                             ToolbarItem::LINK, ToolbarItem::TEXT_COLOR
                                         ]),
