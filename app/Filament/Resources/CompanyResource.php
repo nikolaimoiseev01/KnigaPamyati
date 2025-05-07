@@ -83,10 +83,9 @@ class CompanyResource extends Resource
                                 Block::make('big_block')->schema([
                                     FilamentLexicalEditor::make('text')
                                         ->enabledToolbars([
-                                            ToolbarItem::UNDO, ToolbarItem::REDO,
-                                            ToolbarItem::QUOTE,
+                                            ToolbarItem::CLEAR,
                                             ToolbarItem::BOLD, ToolbarItem::ITALIC, ToolbarItem::UNDERLINE,
-                                            ToolbarItem::LINK, ToolbarItem::TEXT_COLOR, ToolbarItem::BACKGROUND_COLOR
+                                            ToolbarItem::LINK, ToolbarItem::TEXT_COLOR
                                         ]),
                                 ])->label('Большой блок')
                             ])->addActionLabel('Добавить блок')->label('')->collapsible(),
