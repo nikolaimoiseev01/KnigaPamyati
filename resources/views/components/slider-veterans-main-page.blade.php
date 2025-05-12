@@ -25,7 +25,7 @@
             @foreach($veterans as $veteran)
                 <a wire:navigate
                    class="veteran-slider-card swiper-slide text-lg flex flex-col font-mono carousel-card max-w-[360px] lg:!max-w-60 shrink-0 bg-coral-300 rounded shadow p-4 hover:scale-[1.03] transition duration-200" href="{{route('portal.veteran', $veteran['id'])}}">
-                    <img src="{{ $veteran->getFirstMediaUrl('cover') }}" alt=""
+                    <img src="{{ $veteran->getFirstMediaUrl('cover') ?: '/fixed/no-name-veteran.jpg' }}" alt=""
                          class="w-full h-96 lg:h-60 object-cover object-top rounded">
                     <p class="text-sm mt-2 font-bold text-dark-600">{{ $veteran['surname'] }} {{ $veteran['name'] }}</p>
                     <p class="text-xs text-gray-500">{{$veteran['position']}}</p>

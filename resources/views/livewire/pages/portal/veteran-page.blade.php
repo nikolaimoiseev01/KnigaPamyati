@@ -4,7 +4,7 @@
             <img
                 @click="window.dispatchEvent(new CustomEvent('open-image', { detail: '{{$veteran->getFirstMediaUrl('cover')}}' }))"
                 class="col-start-1 w-full max-h-[700px] object-contain col-span-6"
-                 src="{{$veteran->getFirstMediaUrl('cover')}}" alt="">
+                 src="{{ $veteran->getFirstMediaUrl('cover') ?: '/fixed/no-name-veteran.jpg' }}" alt="">
 
             <div class="col-start-7 col-span-6 md:col-start-1 md:col-span-12 md:mx-auto flex flex-col">
                 <x-medals-gallery :medalss="$veteran->getMedia('medals')"/>

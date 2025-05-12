@@ -10,6 +10,7 @@ use App\Livewire\Pages\Auth\ResetPasswordPage;
 use App\Livewire\Pages\Auth\VerifyEmailPage;
 use App\Livewire\Pages\Portal\CompanyPage;
 use App\Livewire\Pages\Portal\IndexPage;
+use App\Livewire\Pages\Portal\ThanksPage;
 use App\Livewire\Pages\Portal\VeteranPage;
 use App\Livewire\Pages\Portal\VeteransListPage;
 use Illuminate\Support\Facades\Route;
@@ -56,4 +57,5 @@ Route::get('/', IndexPage::class)->name('portal.index');
 Route::get('/company/{id}', CompanyPage::class)->name('portal.company');
 Route::get('/veteran/{id}', VeteranPage::class)->name('portal.veteran');
 Route::get('/veterans', VeteransListPage::class)->name('portal.veterans-list');
+Route::get('/thanks', ThanksPage::class)->name('portal.thanks');
 
