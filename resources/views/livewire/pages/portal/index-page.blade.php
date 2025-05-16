@@ -50,11 +50,11 @@
         <div class="grid grid-cols-12 sticky-content-wide justify-center md:flex md:gap-2 sm:flex-col">
             <p class="col-start-2 col-span-4 lg:hidden text-secondary whitespace-nowrap mt-auto text-[1.5vw]">Пока мы
                 помним — они живы</p>
-            <div
-                class="col-start-6 col-span-2 lg:col-start-2 lg:col-span-4 md:col-start-1 p-3 bg-white h-fit mr-8 flex flex-col pb-1 md:!max-w-[50%]">
-                <img src="/fixed/block_2_image.png" class="w-full" alt="">
-                <span class="text-dark-400">Завод</span>
-            </div>
+{{--            <div--}}
+{{--                class="col-start-6 col-span-2 lg:col-start-2 lg:col-span-4 md:col-start-1 p-3 bg-white h-fit mr-8 flex flex-col pb-1 md:!max-w-[50%]">--}}
+{{--                <img src="/fixed/block_2_image.png" class="w-full" alt="">--}}
+{{--                <span class="text-dark-400">Завод</span>--}}
+{{--            </div>--}}
             <p class="col-start-8 col-span-5 lg:col-start-6 lg:col-span-7 text-3xl lg:text-lg md:!text-base sm:!text-sm">
                 — тех, кто
                 остался ярчайшим образцом<br>трудовой
