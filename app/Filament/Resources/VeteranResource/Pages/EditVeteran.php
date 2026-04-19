@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\VeteranResource\Pages;
 
+use Filament\Actions\Action;
+use Filament\Actions\DeleteAction;
 use App\Filament\Resources\VeteranResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
@@ -13,8 +15,8 @@ class EditVeteran extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\Action::make('veteran_page')->label('Страница ветерана на портале')->url(route('portal.veteran', $this->record), shouldOpenInNewTab: true),
-            Actions\DeleteAction::make(),
+            Action::make('veteran_page')->label('Страница ветерана на портале')->url(route('portal.veteran', $this->record), shouldOpenInNewTab: true),
+            DeleteAction::make(),
         ];
     }
 

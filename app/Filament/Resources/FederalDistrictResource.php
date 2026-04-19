@@ -2,11 +2,20 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Section;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use App\Filament\Resources\FederalDistrictResource\Pages\ListFederalDistricts;
+use App\Filament\Resources\FederalDistrictResource\Pages\CreateFederalDistrict;
+use App\Filament\Resources\FederalDistrictResource\Pages\EditFederalDistrict;
 use App\Filament\Resources\FederalDistrictResource\Pages;
 use App\Filament\Resources\FederalDistrictResource\RelationManagers;
 use App\Models\FederalDistrict;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -17,24 +26,24 @@ class FederalDistrictResource extends Resource
 {
     protected static ?string $model = FederalDistrict::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-map';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-map';
 
     protected static ?string $navigationLabel = 'Федеральные округа';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\Card::make()->schema([
-                    Forms\Components\TextInput::make('name')
+        return $schema
+            ->components([
+                Section::make()->schema([
+                    TextInput::make('name')
                         ->label('Название')
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\TextInput::make('slug')
+                    TextInput::make('slug')
                         ->disabled()
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\Textarea::make('description')
+                    Textarea::make('description')
                         ->label('Описание'),
                 ])
 
@@ -45,14 +54,14 @@ class FederalDistrictResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('name')
                     ->label('Название')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->label('Дата создания')
                     ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -60,11 +69,11 @@ class FederalDistrictResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
+            ->toolbarActions([
+                BulkActionGroup::make([
                 ]),
             ]);
     }
@@ -79,9 +88,9 @@ class FederalDistrictResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListFederalDistricts::route('/'),
-            'create' => Pages\CreateFederalDistrict::route('/create'),
-            'edit' => Pages\EditFederalDistrict::route('/{record}/edit'),
+            'index' => ListFederalDistricts::route('/'),
+            'create' => CreateFederalDistrict::route('/create'),
+            'edit' => EditFederalDistrict::route('/{record}/edit'),
         ];
     }
 }

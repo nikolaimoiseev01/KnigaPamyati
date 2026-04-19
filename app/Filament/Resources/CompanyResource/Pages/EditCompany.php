@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\CompanyResource\Pages;
 
+use Filament\Actions\Action;
+use Filament\Actions\DeleteAction;
 use App\Filament\Resources\CompanyResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
@@ -13,8 +15,8 @@ class EditCompany extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\Action::make('company_page')->label('Страница компании на портале')->url(route('portal.company', $this->record), shouldOpenInNewTab: true),
-            Actions\DeleteAction::make(),
+            Action::make('company_page')->label('Страница компании на портале')->url(route('portal.company', $this->record), shouldOpenInNewTab: true),
+            DeleteAction::make(),
         ];
     }
 

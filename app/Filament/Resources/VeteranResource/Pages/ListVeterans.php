@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\VeteranResource\Pages;
 
+use Filament\Actions\CreateAction;
 use App\Filament\Resources\VeteranResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
@@ -15,7 +16,7 @@ class ListVeterans extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

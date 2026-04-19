@@ -2,6 +2,18 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Grid;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Resources\CompanyResource\Pages\ListCompanies;
+use App\Filament\Resources\CompanyResource\Pages\CreateCompany;
+use App\Filament\Resources\CompanyResource\Pages\EditCompany;
 use App\Filament\Resources\CompanyResource\Pages;
 use App\Filament\Resources\CompanyResource\RelationManagers;
 use App\Models\Company;
@@ -9,7 +21,6 @@ use Filament\Forms;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -22,17 +33,17 @@ class CompanyResource extends Resource
 {
     protected static ?string $model = Company::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-library';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-building-library';
 
     protected static ?string $navigationLabel = 'Предприятия';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\Card::make()
+        return $schema
+            ->components([
+                Section::make()
                     ->schema([
-                        Forms\Components\Grid::make()->schema([
+                        Grid::make()->schema([
                             SpatieMediaLibraryFileUpload::make('cover')
                                 ->collection('cover')
                                 ->imagePreviewHeight('250')
@@ -47,38 +58,38 @@ class CompanyResource extends Resource
                                 ->imageEditorMode(2)
                                 ->imageResizeMode('cover')
                                 ->uploadProgressIndicatorPosition('left'),
-                            Forms\Components\Grid::make()->schema([
-                                Forms\Components\Grid::make()->schema([
-                                    Forms\Components\TextInput::make('name')
+                            Grid::make()->schema([
+                                Grid::make()->schema([
+                                    TextInput::make('name')
                                         ->required()
                                         ->label('Название')
                                         ->maxLength(255),
-                                    Forms\Components\Select::make('federal_district_id')
+                                    Select::make('federal_district_id')
                                         ->relationship('federal_district', 'name')
                                         ->label('Округ')
                                         ->required()
                                 ]),
-                                Forms\Components\Grid::make()->schema([
-                                    Forms\Components\TextInput::make('date_start')
+                                Grid::make()->schema([
+                                    TextInput::make('date_start')
                                         ->required()
                                         ->label('Время начала работы')
                                         ->maxLength(255),
-                                    Forms\Components\TextInput::make('date_end')
+                                    TextInput::make('date_end')
                                         ->required()
                                         ->label('Время окончания работы')
                                         ->maxLength(255),
                                 ]),
                             ])->columns(1)->columnSpan(2)
                         ])->columns(3),
-                        Forms\Components\Textarea::make('description')
+                        Textarea::make('description')
                             ->label('Описание')
                             ->rows(10)
                             ->required(),
-                        Forms\Components\Section::make('Таймлайн')->schema([
+                        Section::make('Таймлайн')->schema([
                             Forms\Components\Builder::make('timeline')->blocks([
                                 Block::make('general')->schema([
                                     TextInput::make('period')->label('Период')->required(),
-                                    Forms\Components\Textarea::make('desc')->label('Описание')->required(),
+                                    Textarea::make('desc')->label('Описание')->required(),
                                 ])->label('Стандартный блок')->columns(2),
                                 Block::make('big_block')->schema([
                                     FilamentLexicalEditor::make('text')
@@ -90,7 +101,7 @@ class CompanyResource extends Resource
                                 ])->label('Большой блок')
                             ])->addActionLabel('Добавить блок')->label('')->collapsible(),
                         ]),
-                        Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
+                        SpatieMediaLibraryFileUpload::make('gallery')
                             ->collection('gallery')
                             ->label('Галлерея')
                             ->multiple()
@@ -110,25 +121,25 @@ class CompanyResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('name')
                     ->label('Название')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('federal_district.name')
+                TextColumn::make('federal_district.name')
                     ->numeric()
                     ->label('Федеральный округ')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('date_start')
+                TextColumn::make('date_start')
                     ->label('Время начала работы')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('date_end')
+                TextColumn::make('date_end')
                     ->label('Время окончания работы')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->label('Дата создания')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->label('Дата обновления')
                     ->dateTime()
                     ->sortable()
@@ -137,12 +148,12 @@ class CompanyResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -157,9 +168,9 @@ class CompanyResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCompanies::route('/'),
-            'create' => Pages\CreateCompany::route('/create'),
-            'edit' => Pages\EditCompany::route('/{record}/edit'),
+            'index' => ListCompanies::route('/'),
+            'create' => CreateCompany::route('/create'),
+            'edit' => EditCompany::route('/{record}/edit'),
         ];
     }
 }
